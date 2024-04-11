@@ -1,9 +1,12 @@
+import 'package:blog_app/core/secrets/app_secrets.dart';
 import 'package:blog_app/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'features/auth/presentation/pages/sign_in_screen.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 
-void main() {
+void main() async{
+  await Supabase.initialize(url:AppSecrets.superbaseUrl ,anonKey:AppSecrets.annonApiKey);
   runApp(const MyApp());
 }
 

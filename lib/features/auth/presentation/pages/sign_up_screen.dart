@@ -26,7 +26,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: IconButton(icon:const Icon(Icons.arrow_back_ios),
+        onPressed: (){
+          Navigator.of(context).pop();
+        },),
+      ),
       body: Padding(
         padding : const EdgeInsets.symmetric(horizontal: 16),
         child:Form(
