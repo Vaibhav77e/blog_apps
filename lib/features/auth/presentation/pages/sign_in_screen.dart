@@ -1,6 +1,8 @@
 import 'package:blog_app/core/theme/app_pallete.dart';
+import 'package:blog_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:blog_app/features/auth/presentation/pages/sign_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/auth_field.dart';
 import '../widgets/auth_gradient_button.dart';
@@ -47,7 +49,9 @@ class _SignInScreenState extends State<SignInScreen> {
             const SizedBox(height: 20,),
             AuthGradientButton(
               buttonText: "Sign In",
-              onPressed: (){},
+              onPressed: (){
+              
+              },
             ),
             const SizedBox(height: 20,),
             GestureDetector(
