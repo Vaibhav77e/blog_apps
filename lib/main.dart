@@ -12,7 +12,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  final supabase = await Supabase.initialize(url:AppSecrets.superbaseUrl ,anonKey:AppSecrets.annonApiKey);
+   final supabase = await Supabase.initialize(
+    url:AppSecrets.superbaseUrl ,
+    anonKey:AppSecrets.annonApiKey);
   runApp( MultiBlocProvider(
     providers: [
       BlocProvider(create: (_)=>AuthBloc(
