@@ -4,6 +4,7 @@ import 'package:blog_app/features/auth/data/datasources/auth_remote_data_sources
 import 'package:blog_app/features/auth/data/repositories/auth_repository_implemention.dart';
 import 'package:blog_app/features/auth/domain/usecase/user_signup_usecase.dart';
 import 'package:blog_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:blog_app/init_dependency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'features/auth/presentation/pages/sign_in_screen.dart';
@@ -12,13 +13,10 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-   final supabase = await Supabase.initialize(
-    url:AppSecrets.superbaseUrl ,
-    anonKey:AppSecrets.annonApiKey);
+  await initDependenices();
   runApp( MultiBlocProvider(
     providers: [
-      BlocProvider(create: (_)=>AuthBloc(
-      userSignUp: UserSignUp(AuthRepositoryImpl(AuthRemoteDataSourceImpl(supabase.client),),),),)
+      BlocProvider(create: (_)=>serviceLocator<AuthBloc>(),)
     ],
     child: const MyApp(),
   ));
