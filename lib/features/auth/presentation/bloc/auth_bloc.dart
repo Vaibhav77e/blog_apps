@@ -17,6 +17,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }) : _userSignUp = userSignUp,// initalizers list
    super(AuthInitial()) {
     on<AuthSignUp>((event, emit) async{
+      emit(AuthLoadingState());
       // _userSignUp.call(UserSignUpParams(name: name, email: email, password: password)) is same as _userSignUp(UserSignUpParams(name: name, email: email, password: password))
       // because call is special we can call directly instance(_userSignUp) and the pass params
       final res = await _userSignUp(UserSignUpParams(name: event.name, 
