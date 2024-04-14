@@ -17,7 +17,7 @@ Future<void> initDependenices()async{
     anonKey:AppSecrets.annonApiKey);
 
     // creates instance or objects only once through out the app lifecycle
-    serviceLocator.registerSingleton(()=>supabase.client);
+    serviceLocator.registerLazySingleton(()=>supabase.client);
 }
 
 
