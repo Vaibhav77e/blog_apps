@@ -1,8 +1,14 @@
+import 'package:blog_app/features/auth/domain/enities/user.dart';
 import 'package:blog_app/features/auth/domain/usecase/user_signup_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
+
+
+/*
+remember that usermodel is only for data layer we will user from entity for domain and presentation
+*/
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UserSignUp _userSignUp;
@@ -17,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       email: event.email, 
       password: event.password));
 
-      res.fold((failure) => AuthFailureState(failure.message), (uid) => AuthSuccessState(uid));
+      res.fold((failure) => AuthFailureState(failure.message), (user) => AuthSuccessState(user));
     });
   }
 }
