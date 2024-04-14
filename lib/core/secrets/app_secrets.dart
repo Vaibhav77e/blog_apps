@@ -1,0 +1,4 @@
+class AppSecrets{
+  static const superbaseUrl ='https://fdlhviiwadiogkfykeuv.supabase.co';
+  static const annonApiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZkbGh2aWl3YWRpb2drZnlrZXV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI4MzU4NzIsImV4cCI6MjAyODQxMTg3Mn0.iqw0UemvZcS6wgnOfdL8hbBGJzlF1GFXGW-a0781RcA';
+}
